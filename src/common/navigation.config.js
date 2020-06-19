@@ -39,6 +39,9 @@ import TwoFactorAuth from '../pages/mine/two.factor.auth';
 import KeySettings from '../pages/mine/key.settings';
 import KeyName from '../pages/mine/key.name';
 import Rename from '../pages/mine/rename';
+import DAppIndex from '../pages/dapp/index';
+import DAppList from '../pages/dapp/list';
+import DAppBrowser from '../pages/dapp/browser';
 
 const defaultNavigationOptions = () => ({ navigation }) => {
   common.currentNavigation = navigation;
@@ -285,6 +288,29 @@ const routeConfigMap = {
       path: 'Rename',
       navigationOptions: () => ({
         headerTitle: 'Rename',
+      }),
+    },
+  },
+  app: {
+    DAppIndex: {
+      screen: DAppIndex,
+      path: 'DAppIndex',
+      navigationOptions: () => ({
+        headerTitle: 'DAppIndex',
+      }),
+    },
+    DAppList: {
+      screen: DAppList,
+      path: 'DAppList',
+      navigationOptions: () => ({
+        headerTitle: 'DAppList',
+      }),
+    },
+    DAppBrowser: {
+      screen: DAppBrowser,
+      path: 'DAppBrowser',
+      navigationOptions: () => ({
+        headerTitle: 'DAppBrowser',
       }),
     },
   },

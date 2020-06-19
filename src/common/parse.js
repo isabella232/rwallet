@@ -27,6 +27,8 @@ Parse.setAsyncStorage(AsyncStorage);
 // const ParseUser = Parse.User;
 const ParseAddress = Parse.Object.extend('Address');
 const ParseTransaction = Parse.Object.extend('Transaction');
+const ParseDapp = Parse.Object.extend('Dapp');
+const ParseAd = Parse.Object.extend('Advertisement');
 /**
  * ParseHelper is a helper class with static methods which wrap up Parse lib logic,
  * so that we don't need to reference ParseUser, ParseGlobal in other files
@@ -398,6 +400,29 @@ class ParseHelper {
     if (subscription) {
       subscription.unsubscribe();
     }
+  }
+
+  static async fetchDapps() {
+    const query = new Parse.Query(ParseDapp);
+    query.equalTo('isActive', true);
+    const rows = await query.find();
+    const dapps = _.map(rows, (row) => parseDataUtil.getDapp(row));
+    return dapps;
+  }
+
+  static async fetchDappTypes() {
+    const query = new Parse.Query('Global');
+    const dappTypesObj = await query.equalTo('key', 'dappTypes').first();
+    const dappTypes = parseDataUtil.getDappTypes(dappTypesObj);
+    return dappTypes;
+  }
+
+  static async fetchAdvertisements() {
+    const query = new Parse.Query(ParseAd);
+    query.equalTo('isActive', true);
+    const rows = await query.find();
+    const ads = _.map(rows, (row) => parseDataUtil.getAdvertisement(row));
+    return ads;
   }
 }
 
