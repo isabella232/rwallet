@@ -89,6 +89,9 @@ const parseDataUtil = {
   },
 
   getSubdomainStatus(subdomains, records) {
+    if (subdomains.length < records.length) {
+      throw new Error('err.subdomainnotfound');
+    }
     _.each(subdomains, (row) => {
       const status = row.get('status');
       const address = row.get('address');
