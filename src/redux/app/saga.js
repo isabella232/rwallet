@@ -301,6 +301,7 @@ function* processNotificationRequest(action) {
       common.currentNavigation.navigate('Home');
       const newAction = actions.setFcmNavParams({
         routeName: 'RnsStatus',
+        routeParams: { rnsRows: params },
       });
       yield put(newAction);
       break;
