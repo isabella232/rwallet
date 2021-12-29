@@ -20,7 +20,7 @@
     "@react-native-community/blur": "^3.6.0",
     "@react-native-community/slider": "^1.1.4",
     "@rsksmart/rsk3": "^0.3.2",
-    "axios": "^0.19.0",
+    "axios": "^0.21.2",
     "bignumber.js": "^9.0.0",
     "bip32": "^2.0.4",
     "bip39": "^3.0.2",
