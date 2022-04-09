@@ -31,7 +31,7 @@
     "hdkey": "^1.1.1",
     "immutable": "^4.0.0-rc.12",
     "lodash": "^4.17.15",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "native-base": "^2.13.0",
     "node-libs-browser": "^2.2.1",
     "ordinal": "^1.0.3",
